@@ -13,4 +13,14 @@ feature "Applcation" do
     expect(page).to have_content "Not much to say here"
   end
 
+  scenario "Gif page routes" do
+    visit "/"
+    expect(page).to have_link "New gifs"
+
+    click_link "New Gif"
+
+    expect(page).to have_field "URL"
+
+  end
+
 end
